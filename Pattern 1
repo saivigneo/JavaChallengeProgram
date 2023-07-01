@@ -1,0 +1,38 @@
+Write a program to generate the given pattern.
+
+if n = 4,
+   *
+  **
+ ***
+****
+
+INPUT & OUTPUT FORMAT:
+
+Input consists of a single integer, n.
+Refer to the sample input and output for formatting specifications.
+SAMPLE INPUT:
+
+4
+SAMPLE OUTPUT:
+   *
+  **
+ ***
+****
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+		//your code
+		Scanner sc = new Scanner(System.in);
+		//get value from the user
+		int n = sc.nextInt();
+		//checks for row value
+		for(int i = 1;i<=n;i++){
+		    //checks for n-i value for blank spaces
+		    System.out.print(" ".repeat(n - i));
+		    //checks for ith value
+		    System.out.println("*".repeat(i));
+		}
+	}
+}
