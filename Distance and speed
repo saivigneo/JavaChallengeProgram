@@ -1,0 +1,116 @@
+Xinyou has been trained to drive now. Dr. Dexter wants to get to a National Conference to present Xinyou. The venue of the conference is x kms away from his workshop. He wants to know if Xinyou will be able to make it to the conference on time if he travels at y kms/h.
+Write a C program module that checks if he will be able to make it to the conference on time.
+
+ 
+INPUT & OUTPUT FORMAT: 
+
+Input consists of 4 lines.
+The first line of input is a floating point number corresponding to the distance 'd'. 0 < d < 32767.
+The second line of input is a floating point number corresponding to the speed 's'. 0 < s < 32767.
+The third line of input is a floating point number corresponding to the time at which the conference begins – 'ti'. 
+The fourth line of input is a floating point number corresponding to the current time, 'tj'.
+'ti' and 'tj'  are strictly in the 'hh.mm' format (tj<ti).
+Output consists of a single string 'Yes', 'No' or 'Invalid Input'.
+SAMPLE INPUT & OUTPUT 1:
+100
+25
+16.00
+10.00
+Yes
+ SAMPLE INPUT & OUTPUT 2:
+150
+50
+10.00
+16.00
+Invalid Input
+SAMPLE INPUT & OUTPUT 3:
+100
+25
+14.00
+10.00
+No
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+		//your code
+		Scanner sc = new Scanner(System.in);
+		double distance = sc.nextDouble();
+		double speed = sc.nextDouble();
+		String ti = sc.next(); // conference time
+		String tj = sc.next(); // current time
+		//extract hours and minutes
+		int cst = Integer.parseInt(ti.split(":")[0]);
+		int csm = Integer.parseInt(ti.split(":")[1]);
+		int ch = Integer.parseInt(tj.split(":")[0]);
+		int cm = Integer.parseInt(tj.split(":")[1]);
+		double time = (distance / speed)* 60;//travelling time
+		int  tottime = (cst - ch)*60 + (csm - cm);//time
+		if(tottime <= 0 || time <=0){
+		    System.out.println("Invalid Input");
+		}
+		else if(time < tottime){
+		    System.out.println("Yes");
+		}
+		else{
+		    System.out.println("No");
+		}
+		
+		
+	}
+}
+
+
+Xinyou has been trained to drive now. Dr. Dexter wants to get to a national conference to present Xinyou. The venue of the conference is d km away from his workshop. He wants to know if Xinyou will be able to make it to the conference in 'h' hours, driving within the city speed limit 's'.
+Write a C program module that checks if he will be able to make it to the conference on time.
+
+ 
+INPUT FORMAT:
+
+Input consists of 3 lines.
+The first line of input is a floating point number d (0 < d < 32767), which corresponds to the distance. 
+The second line of input is a floating point number s (0 < s < 32767), which corresponds to the speed limit.
+The third line of input is a floating point number h (0 < h < 32767), which corresponds to the time.
+OUTPUT FORMAT:
+Output consists of a single string 'Yes', 'No' or 'Invalid Input'.
+Refer to the sample input and output for formatting specifications. 
+SAMPLE INPUT & OUTPUT:
+100
+25
+5
+Yes
+SAMPLE INPUT & OUTPUT 2:
+150
+-50
+123
+Invalid Input
+SAMPLE INPUT & OUTPUT 3:
+100
+50
+1
+No
+
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+		//your code
+		Scanner sc = new Scanner(System.in);
+		float d = sc.nextFloat();//distance
+		float a = sc.nextFloat();//speed
+		float h = sc.nextFloat();//time
+		float result =  d /a;
+		if(result > h ){
+		    System.out.println("No");
+		}
+		else if(a<=0 || d <=0 || h<=0){
+		    System.out.println("Invalid Input");
+		}
+	    else{
+	        System.out.println("Yes");
+	    }
+		
+ 	}
+}
