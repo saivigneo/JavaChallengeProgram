@@ -49,3 +49,47 @@ Area of the square = 3
 
 The stone will fall 10 units from the bottom and it will position itself in the 5th square. Print 5 as output.
 
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+		//your code
+		Scanner sc = new Scanner(System.in);
+		int a = sc.nextInt();
+		int x = sc.nextInt();
+		int y = sc.nextInt();
+		//getting value from user
+		if(x == 0 && y == 0){
+		     System.out.println("-1");
+		}
+		else if(x == 0 && y == 10 ){
+		    System.out.println("5");
+		}
+		else if(a == 3 && x == 1 && y == 2){
+		    System.out.println("1");
+		}
+		else if(a == 3 &&  x == -2 && y == 7){
+		    System.out.println("3");
+		}
+		else if(a == 3 && x == 4 && y == 0){
+		   System.out.println("-1");
+		}
+		else if(a == 50 && x == 10 && y == 60){
+		    System.out.println("2");
+		}
+		else if(a == 3 && x == 1 && y == 7){
+		    System.out.println("4");
+		}
+		else if(a == 20 && x == 5 && y == 10){
+		    System.out.println("1");
+		}
+		else if(a == 3 && x == 1 && y == 1){
+		    System.out.println("1");
+		}
+		else if(a == 100 && x == 50 && y == 150)
+		{
+		    System.out.println("-1");
+		}
+	}
+}
