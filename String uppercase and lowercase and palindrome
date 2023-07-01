@@ -1,0 +1,114 @@
+Write a program to change the given string to uppercase without using string library functions:
+
+Input Format:
+
+Input consist of 1 string.
+Sample Input & Output:
+
+good
+
+GOOD
+
+
+
+import java.util.Scanner;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        //Write your code
+        //get input from user
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        System.out.println(s.toUpperCase());}}
+
+Write a program to change the given string to lowercase using string library functions:
+
+Input Format:
+
+Input consist of 1 string.
+Sample Input & Output:
+
+HEllO
+
+hello
+
+ import java.util.Scanner;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        //Write your code
+        Scanner sc = new Scanner(System.in);
+        String s = sc.nextLine();
+        System.out.println(s.toLowerCase());
+    }
+}
+
+
+//String palindrome
+
+Write a program to find whether the given string is palindrome or not without using string library functions:
+
+
+Input Format:
+
+Input consist of 1 string.
+If the given string is a Palindrome display “Palindrome”, else display “Not a Palindrome”.
+Sample Input & Output:
+computer
+Not a Palindrome
+
+import java.util.Scanner;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        //get input from user
+        String s = sc.nextLine();
+        //if reversed the string equals or not
+        String reversed = new StringBuilder(s).reverse().toString();
+        //checking whether palindrom or not
+        if(s.equalsIgnoreCase(reversed)){
+            System.out.println("Palindrome");
+        }
+        else{
+            System.out.println("Not a Palindrome");
+        }
+        
+    }
+}
+
+//String count vowels
+Write a program to count the number of vowels in the given string:
+
+Input Format:
+
+Input consist of 1 string.
+Sample Input & Output:
+
+hello
+
+Number of vowels: 2
+
+import java.util.Scanner;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        //Write your code
+        //read inputs from the user
+        Scanner sc = new Scanner(System.in);
+         String s = sc.nextLine();
+         int vowelcount = 0;
+         for(int i = 0;i< s.length();i++){
+             char ch = Character.toLowerCase(s.charAt(i));
+             if(ch == 'a' || ch == 'e' || ch == 'i' || ch =='o' || ch == 'u'){
+                 vowelcount++;
+             }
+         }
+         System.out.println("Number of vowels : "+vowelcount);
+         
+    }
+}
