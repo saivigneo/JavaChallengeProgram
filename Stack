@@ -1,0 +1,299 @@
+//Array implementation of Stack
+Consider implementing a dynamically sized stack using an array.
+
+Create a structure
+struct stack
+{
+int * a;
+int top;
+int maxSize;
+};
+The structure stack has a pointer 'a' to a dynamically allocated array (used to hold the contents of the stack), an integer 'maxSize' that holds the size of this array (i.e the maximum number of data that can be held in this array) and an integer 'top' which stores the array index of the top element in the stack.
+
+Write a program to implement push and pop operation on the stack and to display the contents of the stack.
+
+In the initstack() function, initialize the value of top to -1 and initialize the value of maxSize.
+
+Print the message “Stack is full” in the push function when an attempt is made to push a data into a full stack.
+Print the message “Stack is empty” in the pop function and return the value -1000 when an attempt is made to pop data from an empty stack.
+Refer function specifications for further details.
+
+FUNCTION DEFINITIONS: 
+
+void initstack (struct stack * p, int maxSize) 
+void push (struct stack * p, int item) 
+int pop (struct stack * p) 
+void display (struct stack p) 
+
+
+
+INPUT & OUTPUT FORMAT:
+
+Refer the sample input and output for formatting specifications.
+Note that the statement “The contents of the stack are” is in the main function. In the display function, if the stack is empty, print “ {}”.
+[All text in bold corresponds to the input and the rest corresponds to output].
+SAMPLE INPUT & OUTPUT:
+
+Enter the maximum size of the stack
+3
+Choice 1 : Push
+Choice 2 : Pop
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+1
+Enter the element to be pushed
+1
+Choice 1 : Push
+Choice 2 : Pop
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+1
+Enter the element to be pushed
+2
+Choice 1 : Push
+Choice 2 : Pop
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+1
+Enter the element to be pushed
+3
+Choice 1 : Push
+Choice 2 : Pop
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+1
+Enter the element to be pushed
+4
+Stack is full
+Choice 1 : Push
+Choice 2 : Pop
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+3
+The contents of the stack are 1 2 3
+Choice 1 : Push
+Choice 2 : Pop
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+2
+The popped element is 3
+Choice 1 : Push
+Choice 2 : Pop
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+2
+The popped element is 2
+Choice 1 : Push
+Choice 2 : Pop
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+2
+The popped element is 1
+Choice 1 : Push
+Choice 2 : Pop
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+2
+Stack is empty
+Choice 1 : Push
+Choice 2 : Pop
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+3
+The contents of the stack are {}
+Choice 1 : Push
+Choice 2 : Pop
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+4 
+
+//Linked list implementation of stack
+Consider implementing a stack using a Linked List.
+
+Create a structure
+struct node {
+int data ;
+struct node * link ;
+} ;
+Write a program to implement push and pop operation on the stack and to display the contents of the stack.
+
+Print the message “Stack is empty” in the pop function and return the value -1000 when an attempt is made to pop data from an empty stack.
+
+Refer to the function specifications for further details.
+
+FUNCTION DEFINITIONS:
+
+void push (struct node **q, int num) 
+void display (struct node * q) 
+int pop (struct node ** q) 
+
+
+INPUT & OUTPUT FORMAT:
+
+Refer the sample input and output for formatting specifications.
+Note that the statement "The contents of the stack are" is in the main function. In the display function, if the stack is empty, print “ {}”.
+[All text in bold corresponds to the input and the rest corresponds to output].
+SAMPLE INPUT & OUTPUT:
+
+Choice 1 : Push
+Choice 2 : Pop
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+1
+Enter the element to be pushed
+3
+Choice 1 : Push
+Choice 2 : Pop
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+1
+Enter the element to be pushed
+5
+Choice 1 : Push
+Choice 2 : Pop
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+1
+Enter the element to be pushed
+6
+Choice 1 : Push
+Choice 2 : Pop
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+3
+The contents of the stack are 6 5 3
+Choice 1 : Push
+Choice 2 : Pop
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+2
+The popped element is 6
+Choice 1 : Push
+Choice 2 : Pop
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+3
+The contents of the stack are 5 3
+Choice 1 : Push
+Choice 2 : Pop
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+2
+The popped element is 5
+Choice 1 : Push
+Choice 2 : Pop
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+2
+The popped element is 3
+Choice 1 : Push
+Choice 2 : Pop
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+2
+Stack is empty
+Choice 1 : Push
+Choice 2 : Pop
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+3
+The contents of the stack are {}
+Choice 1 : Push
+Choice 2 : Pop
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+6
+
+//Postfix expression evaluation
+Write a program to evaluate an expression entered in “postfix” form using stack concept.
+
+Steps to be followed:
+
+STEP: 1
+Create a structure named “postfix”. The structure should contain the following data members:
+
+  stack - an integer array of size 50 for performing stack operations(push and pop).
+  s - a string variable to get the input infix expression.
+  nn -an integer variable as a temporary variable, and finally to store the result.
+  top - an integer variable to store the top value of the stack.
+STEP: 2
+In the initpostfix() function, the data members of the infix structure have to be initialized as follows:
+
+assign top as '-1'.
+
+STEP: 3
+In the setexpr() function, equate the input infix expression to s.
+
+STEP: 4
+In the push() function,
+           - Increment top by 1.
+           - Add the passed integer in the top position.
+
+STEP: 5
+In the pop() function,
+            - Assign the element in the top position of the stack to an integer variable.
+            - Decrement top by 1.
+            - Return the integer.
+
+STEP: 6
+In the calculate() function,
+            - Start a while loop to pause the input string character by character ( using the condition “ *( p -> s ) ”).
+            - If a digit is encountered, push it to the stack.
+            - If an operator is encountered,
+            - Pop two elements from the stack.
+            - Do the operation according to the operator and store it in a variable.
+            - Push the variable to the stack.
+
+STEP: 7
+In the show() function, print the result.
+
+STEP: 8
+In the main() function,
+            -  Call the initpostfix() function.
+            -  Get the postfix expression to be evaluated.
+            -  Call the setexpr() function.
+            -  Then call the calculate() function.
+            -  Then display the result by calling the show() function.
+            -  End the main() function.
+
+ASSUME: The operators in the expression will not be other than '+' , '-' , '*' ,or  '/'.
+
+
+SAMPLE INPUT & OUTPUT:
+
+
+[Contents in bold corresponds to input, and the rest corresponds to output]
+
+Enter postfix expression to be evaluated:
+13+
+Result is: 4
+FUNCTION DEFINITIONS:
+
+void initpostfix (struct postfix * ) 
+void setexpr (struct postfix *, char *) 
+void push (struct postfix *, int) 
+int pop (struct postfix *) 
+void calculate (struct postfix *) 
+void show (struct postfix ) 
