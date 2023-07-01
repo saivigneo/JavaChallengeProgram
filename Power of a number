@@ -22,3 +22,16 @@ Sample Output:
 
 8
 
+import java.lang.Math;
+import java.util.Scanner;
+public class Main
+{
+    public static void main(String[] args)
+    {
+       //read input values
+       Scanner sc = new Scanner(System.in);
+       int X = sc.nextInt();
+       int N = sc.nextInt();
+       System.out.println((int)Math.pow(X,N));
+    }
+
