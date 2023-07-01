@@ -1,0 +1,1011 @@
+Constructor is a special method that has same name as its same class name.
+Default Constructor is a constructor that has no arguments or if it has parameters it will have default values.
+Create a class Main with the following member variables
+int length
+int breadth
+int height
+int radius
+In Main class, get the details of the values of all variables and pass it to the shape class
+Create a class Shape with the following member variables
+int length
+int breadth
+int height
+int radius
+The values are passed from Main class as parameters to the constructors in Shape class. 
+In Shape class, create four constructors. 
+First constructor is default constructor.Shape(){}
+Second constructor is for cube, which receives length, breadth and height as arguments.
+Shape(int lenght,int breadth,int height){constructor body}
+Third constructor is for sphere, which receives radius as arguments.
+
+Shape(int radius){constructor body}
+Fourth constructor is for cylinder, which receives radius and height as arguments.
+Shape(int radius, int height){Constructor body}
+Include three methods in Shape class namely
+public float calculateAreaOfCylinder()
+public float calculateAreaOfSphere()
+public Integer calculateAreaOfCube()  to calculate the area of each shapes.
+Sample Input and Output 1 :
+1.Cube
+2.Sphere
+3.Cylinder
+Enter the choice
+1
+length
+10
+breadth
+20
+height
+30
+Area of Cube is 6000
+
+Sample Input and Output 2:
+1.Cube
+2.Sphere
+3.Cylinder
+Enter the choice
+2
+radius
+10
+Area of sphere is 4186.67
+
+Sample Input and Output 3:
+1.Cube
+2.Sphere
+3.Cylinder
+Enter the choice
+3
+radius
+10
+height
+5
+Area of Cylinders is 1570.0
+
+The copy constructor is a constructor which creates an object by initializing it with an object of the same class, which has been created previously.
+Create three class called Main, Student and Department.
+public class Main{}
+public class Studen{}
+public classDepartment{}
+In Main class, get all details of the student such as Name, id and Department.
+In Department class only id and department fields are declared as private.
+    private String name;
+    private int id;
+Include getter and setter for appropriate fields in Department class.
+Create a constructor with two arguments id and department.
+public Department(int id, String name) 
+public Department(Department oldDepartment) 
+In Student class create a constructor with three arguments Id, Name and Department object.
+    private String name;
+    private int id;
+    private Department department;
+Include getter and setter for appropriate fields in Student class.
+Create an object for Department class and the constructor will be initialized.
+        Department department = new Department(id,depar);
+Create an object for Student class and the constructor will be initialized.
+        Student originalEmployee = new Student(id,name, department);
+Display the details of the student.
+System.out.println("Original:- " + originalEmployee);
+Then create a new object which copies the first constructor object.
+       Student clonedEmployee = new Student(originalEmployee);
+Display the details of the student after copy constructor is initialized.
+System.out.println("Duplicate:- " + clonedEmployee);
+public String toString() 
+    {
+        return "\nStudent Id: " + id + "\nStudent Name: " + name + ""+ department;
+    }
+ 
+Sample Input and Output 1:
+Name
+Sherin
+Id
+45
+Department
+CSE
+Original:- 
+Id: 45
+Name: Sherin
+Department Id: 45
+Department: CSE
+Duplicate:- 
+Id: 45
+Name: Sherin
+Department Id: 45
+Department: CSE
+
+Sample Input and Output 2:
+Name
+Jeni
+Id
+678
+Department
+Civil
+Original:- 
+Id: 678
+Name: Jeni
+Department Id: 678
+Department: Civil
+Duplicate:- 
+Id: 678
+Name: Jeni
+Department Id: 678
+Department: Civil
+
+Sample Input and Output 3:
+Name
+Eve
+Id
+345
+Department
+Mech
+Original:- 
+Id: 345
+Name: Eve
+Department Id: 345
+Department: Mech
+Duplicate:- 
+Id: 345
+Name: Eve
+Department Id: 345
+
+
+//Encapsulation
+Employee Details:
+
+Create a class called "Employee" in which the employee's name, ID, and salary are declared as private attributes and the company name is a static variable. The data types of the members are as follows:
+
+String eName; 
+int eId; 
+int eSalary; 
+String companyName ; // static variable
+
+Note: Use the public setter and getter methods to set and read the value of the attributes.
+Initial companyName = "ABC Corp"
+
+Input Format
+The first input represents the number of employee details to be entered.
+The next n inputs represent employee details with name, ID, and salary.
+The last input represents the company name to be updated.
+
+Output Format
+Display the employee details entered by the user and also display the updated employee details.
+Refer to the sample input and output for format specifications.
+
+Sample Input 
+2
+Sachin
+40
+90000
+Dhoni
+42
+95000
+XYZCorp
+Sample Output
+Employee Name: Sachin
+Employee ID: 40
+Employee Salary: 90000
+Employee Company Name: ABC Corp
+Employee Name: Dhoni
+Employee ID: 42
+Employee Salary: 95000
+Employee Company Name: ABC Corp
+Updated Details
+Employee Name: Sachin
+Employee ID: 40
+Employee Salary: 90000
+Employee Company Name: XYZCorp
+Employee Name: Dhoni
+Employee ID: 42
+Employee Salary: 95000
+Employee Company Name: XYZCorp
+Sample Input
+3
+Sachin
+40
+90000
+Dhoni
+42
+95000
+Angel
+30
+98000
+ERPCorp
+Sample Output
+Employee Name: Sachin
+Employee ID: 40
+Employee Salary: 90000
+Employee Company Name: ABC Corp
+Employee Name: Dhoni
+Employee ID: 42
+Employee Salary: 95000
+Employee Company Name: ABC Corp
+Employee Name: Angel
+Employee ID: 30
+Employee Salary: 98000
+Employee Company Name: ABC Corp
+Updated Details
+Employee Name: Sachin
+Employee ID: 40
+Employee Salary: 90000
+Employee Company Name: ERPCorp
+Employee Name: Dhoni
+Employee ID: 42
+Employee Salary: 95000
+Employee Company Name: ERPCorp
+Employee Name: Angel
+Employee ID: 30
+Employee Salary: 98000
+Employee Company Name: ERPCorp
+
+Account Details:
+Create a class ‘Account’ in which all the fields are declared private.
+Attributes are as follows:
+int account_number;
+int account_balance;
+Get n user details and store them in the private variables. The account number to which the deposit must be made is then read. If an account number already exists, print the account balance; otherwise, display "Account Number Does Not Exist."
+Note:
+Use public setter and getter methods to set and read the value of the attributes.
+The initial value of account_balance is zero.
+
+Input Format
+The first integer input represents n number of users.
+Each user's account number and initial deposit amount are represented by the next n entries.
+The last integer input represents the account number for which the balance needs to be displayed.
+
+Output Format
+Display the balance for the given account number.
+Refer sample output
+
+Sample Input
+2
+1111
+40000
+1112
+45000
+1111
+Sample Output
+40000
+Sample Input
+2
+1111
+40000
+1112
+45000
+1113
+Sample Output
+Account Number does not exist
+
+Player Details:
+Create a class ‘Player’ in which all the fields are declared private.
+
+Attributes are as follows:
+String pName; 
+int pAge; 
+String gameType; 
+
+Note: Use public setter and getter methods to set and read the value of the attributes.
+
+Input Format
+The first input (string) represents the player's name.
+The second input (integer) represents the player's age.
+The third input (string) represents the game type of a player.
+
+Output Format
+Refer sample output.
+
+Sample Input
+Dhoni
+40
+Cricket
+Sample Output
+Player's Name: Dhoni
+Player's Age: 40
+Player's Gametype: Cricket
+
+
+Hall Equality:
+The same halls cannot be booked on the same date for two different events. So get the halls booked by two different people and check whether it is the same or not. Use equals method to check all attributes of the hall are equal including the booking date.
+
+Create Hall class with the following private attributes
+
+Attributes              Datatype
+name                     String
+contactNumber     String
+costPerDay            Double
+ownerName          String
+
+
+Include appropriate getters and setters. Create Default and Parameterized Constructor as Hall(String name, String contactNumber, Double costPerDay, String ownerName) for the class. Override equals method that compares all the fields of the class.
+
+Create a driver class named Main to test the above class.
+
+Input Format
+Input consists of two sets of hall booking details.
+Refer sample input.
+
+Output Format
+Output prints whether the booked halls are the same or not.
+
+Sample Input
+Benny
+9089078654
+1000
+Dayal
+Samir
+9789432346
+2000
+Dev
+Sample Output
+Halls are different
+Sample Input
+Benny
+9089078654
+1000
+Dayal
+Benny
+9089078654
+1000
+Dayal
+Sample Output
+Halls are same
+
+
+Given a Book class and the main class, write a MyBook class that does the following:
+
+Inherits from the book and has a parameterized constructor taking these 3 parameters:
+
+string title
+string author
+int price
+Implements the Book class' abstract display() method so it prints the title, author, and price.
+
+Input Format
+The first line of the input consists of a string
+The second line of the input consists of a string
+The third line of the input consists of an integer
+
+Output Format
+Display the book details.
+
+Constraints
+Strings and integers only.
+
+Sample Input
+love
+jack
+300
+
+Sample Output
+Title: love
+Author: jack
+Price: 300
+Sample Input
+stars
+juno
+150
+Sample Output
+Title: stars
+Author: juno
+Price: 150
+
+Write a java program to rotate a matrix n times in clockwise and anti-clockwise direction using inheritance.
+Create a base class Clock.
+From this extends a child class Clockwise and Anticlockwise.
+Both these child classes should contain the method rotate().
+
+Input Format
+The first line contains the number of rows
+The second line contains the number of columns
+The third lines contain the matrix as input rows and columns with space as separator between each item in the matrix
+Then the last line contains the number of rotations to be performed
+
+Output Format
+Print the matrix after performing the n number of clockwise and anticlockwise rotations
+
+Constraints
+0 < Row <=10
+0 < Column <=10
+0 < Number Of Rotations <=10
+
+Sample Input
+3
+3
+1 2 3
+4 5 6
+7 8 9
+1
+Sample Output
+Clockwise 
+4 1 2 
+7 5 3 
+8 9 6 
+Anti clockwise 
+2 3 6 
+1 5 9 
+4 7 8 
+Sample Input
+4
+4
+1 2 3 4
+5 6 7 8
+9 10 11 12
+13 14 15 16
+3
+Sample Output
+Clockwise 
+13 9 5 1 
+14 7 11 2 
+15 6 10 3 
+16 12 8 4 
+Anti clockwise 
+4 8 12 16 
+3 10 6 15 
+2 11 7 14 
+1 5 9 13 
+
+
+Write a java program to rotate a matrix n times in clockwise and anti-clockwise direction using inheritance.
+Create a base class Clock.
+From this extends a child class Clockwise and Anticlockwise.
+Both these child classes should contain the method rotate().
+
+Input Format
+The first line contains the number of rows
+The second line contains the number of columns
+The third lines contain the matrix as input rows and columns with space as separator between each item in the matrix
+Then the last line contains the number of rotations to be performed
+
+Output Format
+Print the matrix after performing the n number of clockwise and anticlockwise rotations
+
+Constraints
+0 < Row <=10
+0 < Column <=10
+0 < Number Of Rotations <=10
+
+Sample Input
+3
+3
+1 2 3
+4 5 6
+7 8 9
+1
+Sample Output
+Clockwise 
+4 1 2 
+7 5 3 
+8 9 6 
+Anti clockwise 
+2 3 6 
+1 5 9 
+4 7 8 
+Sample Input
+4
+4
+1 2 3 4
+5 6 7 8
+9 10 11 12
+13 14 15 16
+3
+Sample Output
+Clockwise 
+13 9 5 1 
+14 7 11 2 
+15 6 10 3 
+16 12 8 4 
+Anti clockwise 
+4 8 12 16 
+3 10 6 15 
+2 11 7 14 
+1 5 9 13 
+
+A company maintains a database that has the details of all the employees. There are two levels of employees where level 1 is the top management having salary more than 100 dollars and level 2 is the staffs who are getting a salary less than 100 dollars. Create a class named Employee with empId and salary as attributes. Create another class empLevel that extends employee and categorizes the employee into various levels.
+
+Input Format
+The input should contain only the employee id and salary of the employee separated by space.
+Employee id should be of integer type and salary float type.
+
+Output Format
+The output of the program must display the employee id, salary, and level of the employee one below the other in the same order.
+
+Sample Input
+253 5.6
+Sample Output
+253
+5.6
+2
+
+Write a Java program to create a class named "Birds" that contains a constructor that prints "Birds : ". Create a class named Parrot, it extends the class Birds. It contains a constructor that prints "Grey Parrot."
+
+Create class named Cocktail, it extends class Parrot. It contains a constructor that prints "Grey Cocktail". Create class named Kiwi, it extends class Cocktail. It contains constructor which prints "Grey Kiwi"..
+
+If the input is "Parrot" call the class Parrot.
+If the input is "Cocktail" call the class Cocktail.
+If the input is "Kiwi" call the class Kiwi.
+
+Input Format
+Input consists of a string.
+
+Output Format
+Output consists of a string.
+Refer to the sample output for your reference.
+
+Sample Input
+Kiwi
+Sample Output
+Birds : Grey Kiwi
+Sample Input
+Cocktail
+Sample Output
+Birds : Grey Cocoktail
+
+Write a program by creating a class called "Bicycle" as a base class with the number of gears and speed of the bicycle as integer attributes and creating a class called "MontaneBike," a derived class that extends the Bicycle class with an attribute called "seat height" as an integer. Create a Test class to run the program and obtain the output on the console.
+
+Note: Override the toString() method to display the details of the bicycle.
+
+Input Format
+The first line of the input consist of integer (Number of gears, Speed of bicycle, and Seat height).
+
+Output Format
+Display the number of gears and speed of the bicycle 
+
+Constraints
+integers only.
+
+Sample Input
+2 90 40
+Sample Output
+No of gears are 2
+speed of bicycle is 90
+seat height is 40
+Sample Input
+3 60 20
+Sample Output
+No of gears are 3
+speed of bicycle is 60
+seat height is 20
+
+
+Create a Java class called 'Hello' with method named 'sayHello' that demonstrate method overloading:
+
+A method named 'sayHello' without any parameters that prints "Hello" to the console.
+A second method named 'sayHello' with one parameter that takes a String argument 'name' and prints "Hello [name]" to the console.
+Input Format
+The input contains a string.
+
+Output Format
+The first line of the output should display 'Hello'
+The second line of the output should display 'Hello <input>'
+
+Sample Input
+John
+Sample Output
+Hello
+Hello John
+Sample Input
+Ramya
+Sample Output
+Hello
+Hello Ramya
+
+//polymorphirsm
+Create a Java class named 'Main' that demonstrates function overloading:
+
+Define a method named 'multiply' that takes two integer parameters 'num1' and 'num2' and returns their product as an integer value.
+Overload the 'multiply' method by defining a second method named 'multiply' that takes two double parameters 'num1' and 'num2' and returns their product as a double value.
+Input Format
+Input two Integers in a separate line & two Double in a separate line.
+
+Output Format
+One Integer value and Double value after performing multiplication in a separate line.
+
+Sample Input
+2
+3
+1.2
+2.3
+Sample Output
+6
+2.76
+Sample Input
+4
+5
+1.5
+3.4
+Sample Output
+20
+5.1
+
+Write a Java program to demonstrate method overriding and dynamic method dispatch.
+
+Create a class named 'Animal' with a method named 'Print' that prints "Animal" to the console. Next, create two subclasses named 'Dog' and 'Cat' that inherit from the 'Animal' class and override the 'Print' method to print "Dog" and "Cat" to the console, respectively.
+
+In the 'Main' class, declare a variable 'a' of type 'Animal' and initialize it with a new object of the 'Dog' class. Call the 'Print' method on the 'a' variable and observe that "Dog" is printed to the console.
+
+Next, set the 'a' variable to a new object of the 'Cat' class and again call the 'Print' method. Observe that "Cat" is printed to the console this time.
+
+Input Format
+No console input.
+
+Output Format
+Print the String from subclass named Dog and Cat in seperate lines.
+
+Sample Input
+
+Sample Output
+Dog
+Cat
+
+Write a Java program to demonstrate method overloading.
+
+Create a class named 'Main' with three overloaded 'main' methods. The first 'main' method takes a single argument of type 'String', the second 'main' method takes two arguments of type 'String', and the third 'main' method takes no arguments.
+
+In each 'main' method, print a message to the console indicating that the method has been called, along with any arguments that were passed to the method.
+
+In the third 'main' method, call the first two 'main' methods with appropriate arguments to demonstrate that method overloading allows multiple methods with the same name to be defined, as long as they have different method signatures
+
+Input Format
+No console input.
+
+Output Format
+The first line of the output should display 'Hi'.
+The second line of the output should display 'Overloaded: Hello World'.
+The third line of the output should display 'Overloaded: Tom & Jerry'.
+
+Sample Input
+
+Sample Output
+Hi
+Overloaded: Hello World
+Overloaded: Tom & Jerry
+
+To Calculate the Perimeter of the Pool Pocket
+
+Akhil has a pool table(8 ball-pool table) and it is rectangular in shape. Akhil wants to calculate the perimeter of the pool table and the perimeter of its pocket. Help him to find out. Create a class with the name PoolTable which has three Public instance variables length, width, and pocketSize which represent the dimensions of the pool table and the size of its pocket. Create a method "calculatePerimeter()" which calculates the perimeter of the pool table and "calculatePerimeter()" which calculates the Perimeter of the pocket.
+
+Input Format
+Input consists of 3 values
+The first input represents the length of the pool table in meters
+The second input represents the width of the pool table in meters
+The third input represents the size of the pocket in meters
+
+Output Format
+The output consists of two double values
+The first output represents the perimeter of the pool table with precision value '1'.
+The second output represents the perimeter of the pocket with precision value '1'.
+
+Sample Input
+3
+4
+5
+Sample Output
+Perimeter of pool table: 14.0 meters
+Perimeter of pocket: 34.0 meters
+Sample Input
+74
+50
+13
+Sample Output
+Perimeter of pool table: 248.0 meters
+Perimeter of pocket: 300.0 meters
+
+//Abstraction
+Write a java program to implement an abstract class "Marks" with a method "getPercentage()".
+
+Then, create a class called "A" which extends "Marks" and has three attributes named "Marks1", "Marks2", and "Marks3". This class should also have a method named "getPercentage()" that calculates and prints the percentage of the student.
+
+Similarly, create another class called "B" that extends "Marks" and has four attributes named "Marks1", "Marks2", "Marks3", and "Marks4". This class should also have a method named "getPercentage()" that calculates and prints the percentage of the student.
+
+Please note that each mark is out of 100, and you should find the percentage for two students (Student A and Student B) and round off the output to two decimal places.
+
+Input Format
+The first line of the input consists of three integers, i.e., the marks scored by student A.
+The second line of the input consists of four integers, i.e., the marks scored by student B.
+
+Output Format
+The first line prints the percentage of A.
+The second line prints the percentage of B.
+
+Sample Input
+95 85 75
+85 77 92 93
+
+Sample Output
+85.00
+86.75
+
+
+Write a java program that creates an abstract class called "Shape". This class should have the following methods:
+
+abstract void rectangleArea();
+abstract void squareArea();
+abstract void circleArea();
+
+Then, create a class called "Area" that extends the "Shape" class. This class should calculate and print the area of all shapes.
+Finally, create a Main class that gets the inputs and passes them to the appropriate methods.
+
+Input Format
+The first line of the input consists of the length and breadth.
+The second line consists of the side.
+The third line consists of the radius.
+
+Output Format
+The output prints the area of a rectangle, square, and circle.
+
+
+Sample Input
+10 20
+4
+5
+Sample Output
+200
+16
+78.54
+Sample Input
+40 20
+4
+5
+
+Sample Output
+800
+16
+78.54
+
+Write a program in Java that finds the addition, subtraction, multiplication, and division of two complex numbers using inheritance.
+
+Your program should create an abstract class called "Complex". This class should have methods for performing arithmetic operations on complex numbers.
+
+Then, create four child classes called "Addition", "Subtraction", "Multiplication", and "Division". These child classes should extend the "Complex" class and implement the methods for their respective operations.
+
+Input Format
+Input consists of four double-type variables, which denote the real and imaginary parts of the first and second complex numbers, respectively.
+
+Output Format
+The output consists of the addition, subtraction, multiplication, and division of the two complex numbers.
+
+Sample Input
+2 6
+4 2
+
+Sample Output
+
+Addition:
+	6.0000 +8.0000 i
+Subtraction:
+	-2.0000 +4.0000 i
+Multiplication:
+	-4.0000 +28.0000 i
+Division:
+	1.0000 +1.0000 i
+Sample Input
+0 0
+0 0
+
+Sample Output
+
+Addition:
+	0.0000 +0.0000 i
+Subtraction:
+	0.0000 +0.0000 i
+Multiplication:
+	0.0000 +0.0000 i
+Division:
+	NaN NaN i
+
+Write a computer program that creates an abstract class called "First". This class should have three abstract methods:
+input(), add(), result()
+Then, create at least one subclass that extends the "First" class. This subclass should implement the three abstract methods.
+Finally, create an object for each subclass and call their respective methods.
+
+Input Format
+The input consists of two integers.
+
+Output Format
+The output consists of the sum of two numbers.
+
+Sample Input
+10
+20
+
+Sample Output
+30
+
+Sample Input
+500
+1000
+
+Sample Output
+1500
+
+reate an abstract class 'Bank' with an abstract method 'getBalance'. Amounts are deposited in banks A, B and C respectively. 'BankA', 'BankB', and 'BankC' are subclasses of class 'Bank', each having a method named 'getBalance'. Call this method by creating an object of each of the three classes.
+
+Input Format
+The Input consists of three integers.
+
+Output Format
+Refer to the sample input and output
+
+Sample Input
+100
+200
+300
+
+Sample Output
+Deposited Balance is = 100
+Deposited Balance is = 200
+Deposited Balance is = 300
+
+Sample Input
+0
+10
+20
+
+Sample Output
+Deposited Balance is = 0
+Deposited Balance is = 10
+Deposited Balance is = 20
+
+//Interface
+Write a java program to create an interface called "ShapeCalculator" that has a method called "calc(int n)".
+
+Then, create two classes called "Square" and "Circle" that implement the "ShapeCalculator" interface and implement the "calc(int n)" method.
+
+Your program should calculate the area and perimeter of both squares and circles.
+
+Input Format
+The input to your program will be a single integer that represents the side of the square and the radius of the circle.
+
+Output Format
+The output of your program should be the area and perimeter of each shape.
+The output should be displayed in two lines.
+The first line should contain the area and perimeter of the square separated by a space, and the second line should contain the details of the circle in a similar format.
+
+ Please note that the details of the square should be calculated using integer type while the details of the circle should be calculated using double type
+
+Sample Input
+8
+
+Sample Output
+64 32
+200.96 50.24
+
+Sample Input
+7
+Sample Output
+49 28
+153.86 43.96
+
+Write a java program to count the minimum number of front moves required to sort an array.
+Your program should create an interface that declares a method. The class should implement this interface.
+
+Input Format
+The first line of the input consists of an integer.
+The second line of the input consists of an integer.
+
+Output Format
+The output of your program should be an integer representing the minimum number of front moves required to sort the array.
+
+Constraints
+N- integer type(Natural numbers)
+
+Sample Input
+5
+2 3 1 4 5
+
+Sample Output
+1
+
+Sample Input
+7
+5 6 3 2 4 1 7
+
+Sample Output
+4
+
+Write a program to move all the uppercase characters to the end of the string.
+Note: Create an interface name Case with a method, and the main class should define the interface method.
+
+Input Format
+The first line of the input consists of a string.
+
+Output Format
+Display the output as uppercase characters at the end of the string.
+
+Sample Input
+REasonBehInd
+
+Sample Output
+asonehndREBI
+
+Sample Input
+donald
+
+Sample Output
+donald
+
+Write a Java program to find the smallest and largest elements of the diagonals of a square matrix using an interface called Matrix.
+
+The program should have a method named diagonalsMinMax which takes a 2D integer array as input and prints the smallest and largest elements of both the diagonals. Implement this method in a class called Main which implements the Matrix interface.
+
+The program should take the size of the matrix as input in the first line and then the elements of the matrix in the following lines. The output should display the smallest and largest elements of both the diagonals in the format specified in the sample output.
+
+Input Format
+The first line of input contains an integer N, the size of the square matrix.
+The following N lines contain N integers each, representing the elements of the matrix.
+
+Output Format
+The output displays the smallest and largest elements of both the diagonals of the matrix.
+The first line displays the smallest and largest elements of the main diagonal in the format "Smallest Element - 1: x" and "Greatest Element - 1: y", respectively, where x and y are the smallest and largest elements of the main diagonal.
+
+The second line displays the smallest and largest elements of the secondary diagonal in the format "Smallest Element - 2: p" and "Greatest Element - 2: q", respectively, where p and q are the smallest and largest elements of the secondary diagonal.
+
+Constraints
+Only Square matrix (N x N)
+
+Sample Input
+5
+7 8 9 0 1
+2 3 4 5 6
+5 4 2 0 8
+23 5 6 8 9
+12 5 6 7 32
+
+Sample Output
+Smallest Element - 1: 2
+Greatest Element - 1: 32
+Smallest Element - 2: 1
+Greatest Element - 2: 12
+
+Sample Input
+4
+12 34 56 78
+23 45 67 89
+10 20 30 40
+20 15 45 60
+
+Sample Output
+Smallest Element - 1: 12
+Greatest Element - 1: 60
+Smallest Element - 2: 20
+Greatest Element - 2: 78
+
+Create a Notification interface which has three methods
+
+1.      notificationBySms()
+
+2.      notificationByEmail()
+
+3.      notificationByCourier()﻿
+
+
+Create two class as Icici and Hdfc which implements Notification.
+Create a main class which gets input from user and display suitable notification. Refer sample input and output.
+
+Input Format
+First line of the input consists of bank code (1 for ICICI and 2 for HDFC)
+Second line of the input consists of notification type (1 for SMS, 2 for Email and 3 for Courier)
+
+Output Format
+The output prints the bank name with notification type.
+
+Sample Input
+1
+2
+
+Sample Output
+ICICI - Notification by Email
+
+Sample Input
+2
+3
+
+Sample Output
+HDFC - Notification by Courier
+
+Sample Input
+3
+1
+
+Sample Output
+Invalid Input
+
+
