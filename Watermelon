@@ -27,3 +27,26 @@ SAMPLE INPUT & OUTPUT 3:
 
 124
 Invalid Input
+
+
+import java.util.Scanner;
+
+public class Main
+{
+	public static void main(String[] args) {
+		//read user input
+		Scanner sc = new Scanner(System.in);
+		int w = sc.nextInt();
+		int x = w/2;
+		if(w < 1  || w > 100){
+		    System.out.println("Invalid Input");
+		}
+		else if(w % 2 == 0){
+		    System.out.println("YES");
+		    System.out.printf("%d %d",x,x);
+		}
+		else if( w % 2 !=0){
+		    System.out.println("NO");
+		}
+	}
+}
