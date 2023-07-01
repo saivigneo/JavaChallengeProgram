@@ -1,0 +1,343 @@
+Sometimes some words like "localization" or "internationalization" are so long that writing them many times in one text is quite tiresome.
+
+Let's consider a word too long (Length of the word is strictly more than 10 characters). All too long words should be replaced with a special abbreviation.
+
+This abbreviation is made like this: we write down the first and the last letter of a word and between them, we write the number of letters between the first and the last letters. That number is in decimal system and doesn't contain any leading zeroes.
+
+Thus, "localization" will be spelled as "l10n", and "internationalization» will be spelled as "i18n".
+
+You are suggested to automatize the process of changing the words with abbreviations. All too long words should be replaced by the abbreviation and the words that are not too long should not undergo any changes.
+
+
+
+INPUT FORMAT:
+The first line contains an integer n, which corresponds to the number of words.
+The next 'n' lines contain 'n' words. All the words consist of lowercase letters and possess the lengths of from 1 to 50 characters.
+OUTPUT FORMAT:
+The output prints n lines. The i-th line should contain the result of replacing of the i-th word from the input data.
+Refer to sample input and output for formatting details.
+[All text in bold represents the input and the rest represents the output.]
+SAMPLE INPUT & OUTPUT:
+
+Enter the number of words
+4
+Enter the words
+word
+localization
+internationalization
+pneumonoultramicroscopicsilicovolcanoconiosis
+Abbreviation
+word
+l10n
+i18n
+
+
+
+
+import java.util.Scanner;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        int i;
+        //get user input
+        System.out.println("Enter the number of words");
+        //delcare arry size
+        int n = sc.nextInt();
+        String []arr = new String[n];
+        System.out.println("Enter the words");
+        //declare array elements
+        for(i=0;i<n;i++){
+            arr[i] = sc.next();
+        }
+        System.out.println("Abbreviation");
+        for(i=0;i<n;i++){
+            if(arr[i].length() < 10){
+                System.out.println(arr[i]);
+            }
+            else{
+                System.out.print(arr[i].charAt(0));
+                System.out.print(arr[i].length()-2);
+                System.out.println(arr[i].charAt(arr[i].length() -1 ));
+            }
+        }
+    }
+}
+
+//Amusing joke
+So, the New Year holidays are over. Santa Claus and his colleagues can take rest and have guests at last. When two "New Year and Christmas Men" meet, their assistants cut out from the cardboard, the letters from the guest's name and the host's name in honor of this event. Then, they hung the letters above the main entrance. One night, when everyone went to bed, someone took all the letters of our characters' names. Then, he may have shuffled the letters and put them in one pile in front of the door.
+
+The next morning it was impossible to find the culprit who had made the disorder. But everybody wondered whether it is possible to restore the names of the host and his guests from the letters lying at the door? That is, we need to verify that there are no missing letters and that nobody will need to cut more letters.
+
+Help the "New Year and Christmas Men" and their friends to solve this problem. You are given both inscriptions that hung over the front door the previous night and a pile of letters that were found at the front door next morning.
+
+
+
+INPUT FORMAT:
+The input consists of three strings.
+The first string contains the guest's name
+The second string contains the name of the residence host
+The third string contains letters in a pile that were found at the door in the morning.
+All strings are not empty and contain only uppercase Latin letters. The length of each string does not exceed 50.
+OUTPUT FORMAT:
+The output is to print " YES" (without the quotes), if the letters in the pile could be permuted to make the names of the "New Year and Christmas Men". Otherwise, print " NO" without the quotes.
+Refer to sample input and output for formatting details.
+[All text in bold represents the input, and the rest represents the output.]
+SAMPLE INPUT & OUTPUT: 
+Enter the guest's name 
+SANTACLAUS 
+Enter the name of the residence host 
+DEDMOROZ 
+Enter the letters in a pile 
+SANTAMOROZDEDCLAUS 
+YES 
+
+import java.util.*;
+
+public class Main{
+    public static void main(String[] args){
+        //create scanner class
+        Scanner sc =new Scanner(System.in);
+        System.out.println("Enter the guest's name");
+        String guestName=sc.nextLine();
+        System.out.println("Enter the name of the residence host");
+        String hostName=sc.nextLine();
+        System.out.println("Enter the letters in a pile");
+        String pileLetters=sc.nextLine();
+        
+        boolean canPermuate= checkPermutation(guestName,hostName,pileLetters);
+        //if permutate print yes or no
+        System.out.println(canPermuate?"YES":"NO");
+    }
+    public static boolean checkPermutation(String guestName,String hostName,String pileLetters){
+        String CombinedName =guestName+hostName;
+        
+        if(CombinedName.length() != pileLetters.length()){
+            return false;
+        }
+        Map<Character ,Integer> letterCount= new HashMap<>();
+        for(char letter : CombinedName.toCharArray()){
+            letterCount.put(letter,letterCount.getOrDefault(letter,0) + 1);
+        }
+        for(char letter : pileLetters.toCharArray()){
+            if(!letterCount.containsKey(letter)){
+                return false;
+            }
+        letterCount.put(letter, letterCount.get(letter) - 1);
+        if(letterCount.get(letter) == 0){
+            letterCount.remove(letter);
+        }
+    }
+    return true;
+}
+}
+
+
+//Shinking ship
+A ship crashed into a reef and is sinking. Now the entire crew must be evacuated. All n crew members have already lined up in a row (for convenience let's label them all from left to right with positive integers from 1 to n) and are waiting for further instructions. However, one should evacuate the crew properly, in a strict order. Specifically:
+
+The first crew members to leave the ship are rats. Then, women and children (both groups have the same priority) leave the ship. After that, all men are evacuated from the ship. The captain leaves the sinking ship last.
+
+If we cannot determine exactly who should leave the ship first for any two members of the crew by the rules from the previous paragraph, then the one who stands to the left in the line leaves the ship first (or in other words, the one whose number in the line is less).
+
+For each crew member, we know his status as a crew member, and also his name. All crew members have different names. Write a program to determine the order in which to evacuate the crew.
+
+
+
+INPUT & OUTPUT FORMAT:
+The first input contains an integer n, which is the number of people in the crew (1 ≤ n ≤ 100).
+The next 'n' lines contain two words — the name of the crew member, and his status on the ship.
+The words are separated by exactly one space. There are no other spaces in the line.
+The names consist of letters, the first letter is uppercase, the rest are lowercase. The length of any name is from 1 to 10 characters. The status can have the following values: rat for a rat, woman for a woman, child for a child, man for a man, captain for the captain. The crew contains exactly one captain.
+The output displays n lines. The i-th of them should contain the name of the crew member who must be the i-th one to leave the ship.
+SAMPLE INPUT & OUTPUT:
+
+Enter the number of people in the crew 
+ 6 
+Enter the name of the crew member and his status on the ship 
+Jack captain
+Alice woman
+Charlie man
+Teddy rat
+Bob child
+Julie woman 
+Order to evacuate the crew 
+Teddy 
+Alice 
+Bob 
+Julie 
+Charlie 
+Jack
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number of people in the crew");
+        int n = sc.nextInt();
+        sc.nextLine();
+
+        Map<String, Integer> priority = new HashMap<>();
+        priority.put("rat", 0);
+        priority.put("woman", 1);
+        priority.put("child", 1);
+        priority.put("man", 2);
+        priority.put("captain", 3);
+       
+       System.out.println("Enter the name of the crew member and his status on the ship");
+        List<String> crew = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            String[] input = sc.nextLine().split(" ");
+            String name = input[0];
+            String status = input[1];
+            crew.add(name + " " + status);
+        }
+
+        Collections.sort(crew, new Comparator<String>() {
+            public int compare(String a, String b) {
+                String[] aSplit = a.split(" ");
+                String[] bSplit = b.split(" ");
+                int aPriority = priority.get(aSplit[1]);
+                int bPriority = priority.get(bSplit[1]);
+                if (aPriority != bPriority) {
+                    return Integer.compare(aPriority, bPriority);
+                } else {
+                    return aSplit[0].compareTo(bSplit[0]);
+                }
+            }
+        });
+
+        System.out.println("Order to evacuate the crew");
+        for (String s : crew) {
+            System.out.println(s.split(" ")[0]);
+        }
+    }
+}
+
+//Dubstep
+
+Vasya works as a DJ in the best Berland nightclub, and he often uses dubstep music in his performance. Recently, he has decided to take a couple of old songs and make dubstep remixes from them.
+
+Let's assume that a song consists of some number of words. To make the dubstep remix of this song, Vasya inserts a certain number of words "WUB" before the first word of the song (the number may be zero), after the last word (the number may be zero), and between words (at least one between any pair of neighbouring words), and then the boy glues together all the words, including "WUB", in one string and plays the song at the club.
+
+For example, a song with words "I AM X" can transform into a dubstep remix as "WUBWUBIWUBAMWUBWUBX" and cannot transform into "WUBWUBIAMWUBX".
+
+Recently, Petya has heard Vasya's new dubstep track, but since he isn't into modern music, he decided to find out what was the initial song that Vasya remixed. Help Petya restore the original song.
+
+
+
+INPUT & OUTPUT FORMAT:
+The input consists of a single non-empty string, consisting only of uppercase letters, the string's length doesn't exceed 100 characters.
+It is guaranteed that before Vasya remixed the song, no word contained substring "WUB" in it; Vasya didn't change the word order. It is also guaranteed that initially, the song had at least one word.
+The output is to print the words of the initial song that Vasya used to make a dubstep remix. Separate the words with space.
+[All text in bold represents the input and the rest represents the output.]
+SAMPLE INPUT & OUTPUT 1:
+Enter the dubstep remix of the song 
+WUBWUBABCWUB 
+The words of the initial song 
+ABC 
+SAMPLE INPUT & OUTPUT 2:
+Enter the dubstep remix of the song 
+WUBWEWUBAREWUBWUBTHEWUBCHAMPIONSWUBMYWUBFRIENDWUB 
+The words of the initial song 
+WE ARE THE CHAMPIONS MY FRIEND 
+
+import java.util.Scanner;
+public class Main{
+    public static void main(String args[]){
+        //create scanner class
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the dubstep remix of the song");
+        //get input from user
+        String r = sc.nextLine();
+        sc.close();
+        
+        String Originalsong=restoreOriginalSong(r);
+        System.out.println("The words of the initial song");
+        System.out.println(Originalsong);
+    }
+    public static String restoreOriginalSong(String r){
+        String Originalsong = r.replace("WUB"," ");
+        Originalsong =Originalsong.trim().replaceAll("\\s+"," ");
+        //return original song
+        return Originalsong;
+    }
+}
+
+
+//String task
+import java.util.Scanner;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        //display to get string from the user
+        System.out.println("Enter the string");
+        //get input from the user
+        String n = sc.nextLine();
+        //convert input to lowercases
+        n = n.toLowerCase();
+        //split input string into characters
+        String [] result = n.split("");
+        System.out.println("The resultant string");
+        for(int i =0;i < n.length();i++){
+                if(result[i].equals("a") || result[i].equals("i") || result[i].equals("o") || result[i].equals("u") ||result[i].equals("e")){
+                    System.out.print("");
+                }
+                else if(result[i].equals("g")){
+                    System.out.print(result[i]);
+                }
+                else if(result[i].equals("/") || result[i].equals("'")){
+                    System.out.print("");
+                }
+                else{   
+                    System.out.print("."+result[i]);
+                }
+        }
+    }
+}
+
+//Pasha and String
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter the Pasha's string");
+        String s = scanner.nextLine();
+
+        System.out.println("Enter the number of days");
+        int m = scanner.nextInt();
+
+        System.out.println("Enter the position from which Pasha started transforming");
+        int[] positions = new int[m];
+        for (int i = 0; i < m; i++) {
+            positions[i] = scanner.nextInt();
+        }
+
+        char[] chars = s.toCharArray();
+        int n = s.length();
+
+        for (int i = 0; i < m; i++) {
+            int ai = positions[i];
+            int left = ai - 1;
+            int right = n - ai;
+
+            while (left < right) {
+                char temp = chars[left];
+                chars[left] = chars[right];
+                chars[right] = temp;
+                left++;
+                right--;
+            }
+        }
+
+        String result = new String(chars);
+        System.out.println("The resultant string");
+        System.out.println(result);
+    }
+}
