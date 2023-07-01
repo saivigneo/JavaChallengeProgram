@@ -1,0 +1,521 @@
+//Array implementaion of queue
+Consider implementing a fixed size queue of maximum size 5 using an array.
+
+Create a structure
+struct queue {
+    int contents[5];
+    int front;
+    int count;
+};
+Note that the array contents holds the contents of the queue and the integer front stores the index of the front element in the queue.
+
+Write a program to implement enQueue and deQueue operation on a queue and display the contents of the queue.
+
+In the initQueue() function initialize the value of front and count to 0.
+
+Print the message “Queue is full” in the enQueue function when an attempt is made to insert a data into a full queue.
+
+Print the message “Queue is empty” in the deQueue function and return the value -1000 when an attempt is made to delete data from an empty queue.
+
+ 
+
+INPUT AND OUTPUT FORMAT:
+
+Refer the sample input and output for formatting specifications.
+Note that the statement “The contents of the queue are” is in the main function. In the display function, if the queue is empty, print “ {}”.
+[All text in bold corresponds to the input and the rest corresponds to output]
+SAMPLE INPUT AND OUTPUT:
+
+Choice 1 : Enter element into Queue
+Choice 2 : Delete element from Queue
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+3
+The contents of the queue are {}
+Choice 1 : Enter element into Queue
+Choice 2 : Delete element from Queue
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+1
+Enter the element to be inserted/entered
+10
+Choice 1 : Enter element into Queue
+Choice 2 : Delete element from Queue
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+1
+Enter the element to be inserted/entered
+20
+Choice 1 : Enter element into Queue
+Choice 2 : Delete element from Queue
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+1
+Enter the element to be inserted/entered
+30
+Choice 1 : Enter element into Queue
+Choice 2 : Delete element from Queue
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+1
+Enter the element to be inserted/entered
+40
+Choice 1 : Enter element into Queue
+Choice 2 : Delete element from Queue
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+1
+Enter the element to be inserted/entered
+50
+Choice 1 : Enter element into Queue
+Choice 2 : Delete element from Queue
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+1
+Enter the element to be inserted/entered
+60
+Queue is full
+Choice 1 : Enter element into Queue
+Choice 2 : Delete element from Queue
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+2
+The deleted element is 10
+Choice 1 : Enter element into Queue
+Choice 2 : Delete element from Queue
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+2
+The deleted element is 20
+Choice 1 : Enter element into Queue
+Choice 2 : Delete element from Queue
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+1
+Enter the element to be inserted/entered
+60
+Choice 1 : Enter element into Queue
+Choice 2 : Delete element from Queue
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+3
+The contents of the queue are 30 40 50 60
+Choice 1 : Enter element into Queue
+Choice 2 : Delete element from Queue
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+2
+The deleted element is 30
+Choice 1 : Enter element into Queue
+Choice 2 : Delete element from Queue
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+2
+The deleted element is 40
+Choice 1 : Enter element into Queue
+Choice 2 : Delete element from Queue
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+2
+The deleted element is 50
+Choice 1 : Enter element into Queue
+Choice 2 : Delete element from Queue
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+3
+The contents of the queue are 60
+Choice 1 : Enter element into Queue
+Choice 2 : Delete element from Queue
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+2
+The deleted element is 60
+Choice 1 : Enter element into Queue
+Choice 2 : Delete element from Queue
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+2
+Queue is empty
+Choice 1 : Enter element into Queue
+Choice 2 : Delete element from Queue
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+3
+The contents of the queue are {}
+Choice 1 : Enter element into Queue
+Choice 2 : Delete element from Queue
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+4
+FUNCTION DEFINITIONS:
+
+void  initQueue (struct queue *q) 
+void enQueue (struct queue *q, int element) 
+int deQueue (struct queue *q) 
+void display (struct queue q) 
+
+//Linked list implementaion of stack
+Consider implementing a circular queue using a linked list.
+
+Create a structure
+struct node {
+    int data ;
+    struct node * link ;
+};
+Write a program to implement enQueue(addcirq) and deQueue(delcirq) operations on a queue and to display the contents of the queue.
+
+Create a function printMenu() to print the following:
+
+Choice 1: Enter element into Queue
+Choice 2: Delete an element from Queue
+Choice 3: Display
+Any other choice: Exit
+Print the message “Queue is empty” in the deQueue(delcirq) function and return the value -1000 when an attempt is made to delete data from an empty queue.
+
+
+
+FUNCTION SPECIFICATIONS:
+
+void addcirq ( struct node **f, struct node **r, int item ) --- f corresponds to the front node and r corresponds to the rear node.
+int delcirq ( struct node **f, struct node **r ) --- f corresponds to the front node and r corresponds to the rear node.
+void cirq_display ( struct node *f ) --- f corresponds to the pointer to the front node)
+void printMenuegg
+
+
+INPUT AND OUTPUT FORMAT:
+
+Refer the sample input and output for formatting specifications.
+Note that the statement “The contents of the queue are” is in the main function. In the display function, if the queue is empty, print “ {}”.
+[All text in bold corresponds to the input and the rest corresponds to output].
+SAMPLE INPUT AND OUTPUT:
+
+Choice 1 : Enter element into Queue
+Choice 2 : Delete element from Queue
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+1
+Enter the element to be inserted/entered
+20
+Choice 1 : Enter element into Queue
+Choice 2 : Delete element from Queue
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+1
+Enter the element to be inserted/entered
+30
+Choice 1 : Enter element into Queue
+Choice 2 : Delete element from Queue
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+1
+Enter the element to be inserted/entered
+40
+Choice 1 : Enter element into Queue
+Choice 2 : Delete element from Queue
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+3
+The contents of the queue are 20 30 40
+Choice 1 : Enter element into Queue
+Choice 2 : Delete element from Queue
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+1
+Enter the element to be inserted/entered
+50
+Choice 1 : Enter element into Queue
+Choice 2 : Delete element from Queue
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+3
+The contents of the queue are 20 30 40 50
+Choice 1 : Enter element into Queue
+Choice 2 : Delete element from Queue
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+2
+The deleted element is 20
+Choice 1 : Enter element into Queue
+Choice 2 : Delete element from Queue
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+2
+The deleted element is 30
+Choice 1 : Enter element into Queue
+Choice 2 : Delete element from Queue
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+2
+The deleted element is 40
+Choice 1 : Enter element into Queue
+Choice 2 : Delete element from Queue
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+2
+The deleted element is 50
+Choice 1 : Enter element into Queue
+Choice 2 : Delete element from Queue
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+2
+Queue is empty
+Choice 1 : Enter element into Queue
+Choice 2 : Delete element from Queue
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+3
+The contents of the queue are {}
+Choice 1 : Enter element into Queue
+Choice 2 : Delete element from Queue
+Choice 3 : Display
+Any other choice : Exit
+Enter your choice
+4
+
+FUNCTION DEFINITIONS: 
+
+void addcirq (struct node **, struct node **, int) 
+int delcirq (struct node **, struct node **) 
+void cirq_display (struct node *) 
+
+
+//Tree
+The following is the definition of Binary Search Tree(BST)
+
+Binary Search Tree is a node-based binary tree data structure which has the following properties:
+
+The left subtree of a node contains only nodes with keys lesser than the node’s key.
+The right subtree of a node contains only nodes with keys greater than the node’s key.
+The left and right subtree each must also be a binary search tree.
+There must be no duplicate nodes.
+200px-Binary_search_tree.svg
+
+
+
+The above properties of Binary Search Tree provide an ordering among keys so that the operations like search, minimum and maximum can be done fast. If there is no such ordering, then we have to compare every key to search a given key.
+
+ 
+Searching a key
+
+To search a given key in Binary Search Tree, we have to first compare it with root. If the key is present at root, we return the root. If the key is greater than the root’s key, we recur for the right subtree of the root node. Otherwise, we recur for the left subtree.
+
+
+
+SAMPLE INPUT
+
+2
+3
+9
+4
+6
+10
+1
+-1
+SAMPLE OUTPUT:
+
+1
+2
+3
+4
+6
+9
+10
+
+Implement a C program to construct a Binary Search Tree and also display the elements in the tree using Inorder, Preorder, and Postorder traversals.
+
+Binary Search tree is a binary tree in which each internal node x stores an element such that the elements stored in the left subtree of x are less than or equal to x and elements stored in the right subtree of x are greater than or equal to x. This is called binary-search-tree property.
+
+
+
+INPUT & OUTPUT FORMAT:
+
+Refer the sample input and output for formatting specifications.
+[All text in bold corresponds to the output and the rest corresponds to input].
+
+SAMPLE INPUT & OUTPUT:
+
+Enter the element to be inserted in the tree
+1
+Do you want to insert another element?
+yes
+Enter the element to be inserted in the tree
+2
+Do you want to insert another element?
+yes
+Enter the element to be inserted in the tree
+3
+Do you want to insert another element?
+yes
+Enter the element to be inserted in the tree
+4
+Do you want to insert another element?
+no
+Inorder Traversal: The elements in the tree are 1 2 3 4
+Preorder Traversal: The elements in the tree are 1 2 3 4
+PostorderTraversal: The elements in the tree are 4 3 2 1
+
+Implement a C program to construct a Binary Search Tree, to search for an element in BST and to display the elements in the tree using Inorder traversals.
+
+Binary Search tree is a binary tree in which each internal node x stores an element such that the elements stored in the left subtree of x are less than or equal to x and elements stored in the right subtree of x are greater than or equal to x. This is called binary-search-tree property.
+ 
+
+
+INPUT & OUTPUT FORMAT:
+
+Refer the sample input and output for formatting specifications.
+[All text in bold corresponds to the input and the rest corresponds to output].
+SAMPLE INPUT & OUTPUT:
+
+Enter the element to be inserted in the tree
+1
+Do you want to insert another element?
+yes
+Enter the element to be inserted in the tree
+2
+Do you want to insert another element?
+yes
+Enter the element to be inserted in the tree
+3
+Do you want to insert another element?
+yes
+Enter the element to be inserted in the tree
+4
+Do you want to insert another element?
+no
+InorderTraversal : The elements in the tree are 1 2 3 4
+Enter the element to be searched
+6
+6 not found
+
+
+//Graphs
+The first step in a graph is representing the nodes and edges of the graph in the matrix form.
+
+Write a program to obtain the adjacency matrix representation of a graph.
+ 
+
+INPUT & OUTPUT FORMAT:
+
+Refer the sample input and output for formatting specifications.
+
+[All text in bold corresponds to the input and the rest corresponds to output]
+
+SAMPLE INPUT & OUTPUT 1:
+
+Please enter the number of nodes in the graph
+4
+Please enter the number of edges in the graph
+4
+Is the graph directed
+no
+Enter the start node, end node and weight of edge no 0
+0 1 7
+Enter the start node, end node and weight of edge no 1
+2 3 5
+Enter the start node, end node and weight of edge no 2
+1 2 3
+Enter the start node, end node and weight of edge no 3
+3 0 6
+Adjacency Matrix Representation:
+0 7 0 6
+7 0 3 0
+0 3 0 5
+6 0 5 0
+SAMPLE INPUT & OUTPUT 2: 
+
+Please enter the number of nodes in the graph
+4
+Please enter the number of edges in the graph
+3
+Is the graph directed
+yes
+Enter the start node, end node and weight of edge no 0
+0 1 3
+Enter the start node, end node and weight of edge no 1
+0 2 4
+Enter the start node, end node and weight of edge no 2
+1 2 5
+Adjacency Matrix Representation:
+0 3 4 0
+0 0 5 0
+0 0 0 0
+0 0 0 0
+
+QUESTION:
+Write a program to obtain the adjacency list representation of a graph from its adjacency matrix representation.
+
+
+
+INPUT & OUTPUT FORMAT:
+
+Refer the sample input and output for formatting specifications.
+
+[All text in bold corresponds to the input and the rest corresponds to output]
+
+SAMPLE INPUT & OUTPUT:
+
+Please enter the number of nodes in the graph
+4
+Please enter the number of edges in the graph
+4
+Is the graph directed
+no
+Enter the start node, end node and weight of edge no 0
+0 1 7
+Enter the start node, end node and weight of edge no 1
+2 3 5
+Enter the start node, end node and weight of edge no 2
+1 2 4
+Enter the start node, end node and weight of edge no 3
+3 0 6
+Adjacency Matrix Representation:
+0 7 0 6
+7 0 4 0
+0 4 0 5
+6 0 5 0
+Adjacency List Representation:
+Node 0 is connected to the following nodes:
+Node 1 with edge weight 7
+Node 3 with edge weight 6
+Node 1 is connected to the following nodes:
+Node 0 with edge weight 7
+Node 2 with edge weight 4
+Node 2 is connected to the following nodes:
+Node 1 with edge weight 4
+Node 3 with edge weight 5
+Node 3 is connected to the following nodes:
+Node 0 with edge weight 6
+Node 2 with edge weight 5
+
+
