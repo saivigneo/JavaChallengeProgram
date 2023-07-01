@@ -1,0 +1,339 @@
+//Linkedlist-append
+QUESTION:
+John is the class teacher of class 9. After summer vacation, the school was reopened. As it was the first day of the school, John wants to arrange seats for his students. He asked them to sit in the order as they come. The student who comes first sits in first place, the student who comes second sits in second place and so on. The seats are arranged in the order that the students sit behind already seated students. Implement this concept using Linked list - append.
+
+
+
+INPUT FORMAT:
+
+Enter the data for the nodes one by one.
+-1 indicates the end of the linked list.
+OUTPUT FORMAT:
+
+Refer the sample input and output for formatting specifications.
+SAMPLE INPUT:
+
+4
+2
+1
+5
+-1
+SAMPLE OUTPUT:
+
+4 2 1 5
+
+import java.util.*;
+class Node{
+    int data;
+    Node next;
+    public Node(int data){
+        this.data=data;
+    }
+}
+class Linkedlist{
+    Node head;
+    public Linkedlist(){
+        this.head=null;
+    }
+    public void insert(int data){
+        Node newNode=new Node(data);
+        if(head==null){
+            head=newNode;
+        }else{
+            Node current=head;
+        while(current.next!=null)
+            {
+                current=current.next;
+            }
+            current.next=newNode;
+        }
+    }
+    public void display(){
+        Node current=head;
+        if(current==null){
+            System.out.println("list is empty");
+            return;
+        }
+        while(current!=null){
+            System.out.print(current.data+" ");
+            current=current.next;
+        }
+        System.out.println();
+       
+    }
+}
+public class Main
+{
+    public static void main(String[] args)
+    {
+       Linkedlist li=new Linkedlist();
+       Scanner sc=new Scanner(System.in);
+       int data;
+       while((data=sc.nextInt())!=-1){
+           li.insert(data);
+       }
+       li.display();
+    }
+}
+
+//Linkedlist append at the beginning
+
+John is the class teacher of class 9. After summer vacation, the school was reopened. As it was the first day of the school, John wants to arrange seats for his students. He asked them to sit in the order as they come. The student who comes first sits in first place, the student who comes second sits in second place and so on.
+
+After some time, he changes the order of the seating arrangement. Instead of asking the students to sit behind the already seated students, they are made to sit in front of the already seated students. Implement this concept using Linked list- Adding data at the beginning.
+
+
+INPUT FORMAT:
+
+Input consists of a list of integers.
+-1 indicates the end of the linked list.
+OUTPUT FORMAT:
+
+Output is a sequence of integers from the list.
+
+SAMPLE INPUT:
+
+4
+2
+1
+6
+-1
+SAMPLE OUTPUT:
+
+6 1 2 4
+
+//Linkedlist add a new element at the given position
+
+Jeremy is the class teacher of class 9. After summer vacation, the school was reopened. As it was the first day of the school, Jeremy wants to arrange seats for his students. He asked them to sit in the order as they come. The student who comes first sits in first place, the student who comes second sits in second place and so on.
+
+After some times, a new student is joining in the class. So, he needs to arrange him in one particular position. Implement this concept using Linked list- Adding data after the given position.
+
+
+INPUT FORMAT:
+
+Input consists of a list of integers.
+-1 indicates the end of the linked list.
+OUTPUT FORMAT:
+
+Output is a sequence of integers from the list.
+
+SAMPLE INPUT:
+4
+2
+1
+6
+-1
+3
+10
+
+SAMPLE OUTPUT:
+Before Insertion:
+4 2 1 6
+After Insertion:
+4 2 1 10 6
+
+//Linkedlilst count
+John wants to know how many students are present in the class and how many of them are absent. So he wants to count the number of students present in the class. Implement this concept using linked list and find how many students are present in the class.
+
+
+INPUT & OUTPUT FORMAT:
+
+Input consists of a list of integers.
+-1 indicates the end of the linked list.
+Refer to sample input & output for output formatting specifications.
+SAMPLE INPUT & OUTPUT:
+
+Enter the student roll number:
+4
+Enter the student roll number:
+3
+Enter the student roll number:
+2
+Enter the student roll number:
+1
+Enter the student roll number:
+-1
+The students who are present in the class are
+4 3 2 1
+The number of students who are present is 4.
+
+//Linkedlist delete at the begining
+In John’s school, they have decided to conduct sports day. John was asked to select students for each competition. So he called the students one by one and asked them to go to the ground for selection. He called the students in the order they were seated. The student who was seated first was sent first for selection. After he sends the students for selection, he took attendance.
+
+Display the roll number of the students who are present in the class while the selection process is being done.
+
+Implement this concept using Linked List- Delete at beginning.
+
+
+INPUT & OUTPUT FORMAT:
+
+Input consists of a list of integers.
+-1 indicates the end of the linked list.
+The next input is an integer to specify the number of students sent for selection.
+Refer to the sample input & output for formatting specifications.
+SAMPLE INPUT & OUTPUT:
+
+Enter the student roll number:
+6
+Enter the student roll number:
+3
+Enter the student roll number:
+1
+Enter the student roll number:
+4
+Enter the student roll number:
+8
+Enter the student roll number:
+-1
+The students are seated in the order:
+6 3 1 4 8
+The number of students sent for selection:
+3
+Students in the class after sending the first student for selection:
+3 1 4 8
+Students in the class after sending the second student for selection:
+1 4 8
+Students in the class after sending the third student for selection:
+4 8
+
+//Linkedlist delete at the given element
+John called out the roll number of the selected students one by one and asked them to go for the second round of selection. After he sends the students for selection, he took attendance. 
+
+Display the roll number of the students who are sent for selection and the roll number of the students who are present in the class at that time. Implement this concept using Linked list- Delete the given element at a particular position.
+
+
+
+INPUT & OUTPUT FORMAT:
+
+Input consists of a list of integers.
+-1 indicates the end of the linked list.
+The next input is an integer which denotes the roll number of the students to be sent for selection.
+Refer to sample input & output for formatting specifications.
+SAMPLE INPUT & OUTPUT:
+
+Enter the student roll number:
+6
+Enter the student roll number:
+3
+Enter the student roll number:
+2
+Enter the student roll number:
+9
+Enter the student roll number:
+-1
+The students are seated in the order:
+6 3 2 9
+Enter the roll number who needs to go to selection
+3
+The students in class after sending for selection is
+6 2 9
+
+//Linkedlist ascending order
+John decided to conduct an exam. So, he planned to change the seating arrangement of the students. He made the students sit in the attendance order. Implement this concept using linked list and display the roll number of the students in the attendance order.
+
+
+INPUT & OUTPUT FORMAT:
+
+Input consists of a list of integers.
+-1 indicates the end of the linked list.
+Refer the sample input and output for formatting specifications.
+SAMPLE INPUT & OUTPUT:
+
+Enter the student roll number:
+7
+Enter the student roll number:
+6
+Enter the student roll number:
+2
+Enter the student roll number:
+9
+Enter the student roll number:
+-1
+The students are seated in the order:
+2 6 7 9
+
+//Linkedlist descending order
+John wants to find the maximum mark, from the list of marks scored by various students. Implement this concept using a Linked list and find the maximum element in the list.
+
+
+
+INPUT & OUTPUT FORMAT:
+
+Input consists of a list of integers.
+-1 indicates the end of the linked list.
+Refer the sample input & output for formatting specifications.
+SAMPLE INPUT & OUTPUT:
+Enter the student mark:
+8
+Enter the student mark:
+5
+Enter the student mark:
+3
+Enter the student mark:
+2
+Enter the student mark:
+7
+Enter the student mark:
+-1
+The students' marks are:
+8 5 3 2 7
+The maximum mark is 8.
+
+//Linked list append without duplicates
+John assigned a roll number to each student in the ascending order. Every time he assigns a number to a student he wants to check whether the number is already assigned to any other student to avoid the duplicates of the roll number. Add the number to the list only if the number is not present already. Implement this concept using a Linked List.
+
+
+INPUT & OUTPUT FORMAT:
+
+Input consists of a list of integers.
+-1 indicates the end of the linked list.
+Refer the sample input & output for formatting specifications.
+SAMPLE INPUT & OUTPUT:
+
+Enter the student roll number:
+9
+Enter the student roll number:
+4
+Enter the student roll number:
+3
+Enter the student roll number:
+2
+Enter the student roll number:
+9
+Enter the student roll number:
+8
+Enter the student roll number:
+-1
+The assigned roll numbers are:
+9 4 3 2 8
+
+//Linked list reverse
+ohn assigned a roll number to each student in the ascending order. Every time he assigns a number to a student he wants to check whether the number is already assigned to any other student to avoid the duplicates of the roll number. Add the number to the list only if the number is not present already. Implement this concept using a Linked List.
+
+
+INPUT & OUTPUT FORMAT:
+
+Input consists of a list of integers.
+-1 indicates the end of the linked list.
+Refer the sample input & output for formatting specifications.
+SAMPLE INPUT & OUTPUT:
+
+Enter the student roll number:
+9
+Enter the student roll number:
+4
+Enter the student roll number:
+3
+Enter the student roll number:
+2
+Enter the student roll number:
+9
+Enter the student roll number:
+8
+Enter the student roll number:
+-1
+The assigned roll numbers are:
+9 4 3 2 8  
+
+
+
