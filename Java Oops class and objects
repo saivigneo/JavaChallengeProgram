@@ -1,0 +1,165 @@
+Write a Java program that prints a welcome message and a hello message using two different classes Message and Hello, each with a default constructor that outputs a specific message.
+
+Input Format:
+No console Input.
+
+Output Format:
+The Output Should display the Welcome Message 
+
+Sample 1 Input:
+No input values.
+
+Sample 1 Output:
+Welcome Hello
+
+import java.util.Scanner;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        //write your code
+        AIML ai = new AIML();
+         ai.welcome();
+        
+    }
+}
+class AIML{
+    public static void welcome(){
+    System.out.println("Welcome Hello");
+    }
+}
+
+
+
+Write a Java program to Create a class named Player with the following member variables/attributes. Create another class named Main and write a main method to test the above class.
+
+Input Format
+The first line consists of a string that represents the name
+The second line consists of a string that represents the country
+The third line consists of a string that represents the skill
+
+Output Format
+The Output Should Display the Player Details 
+
+Sample 1 Input:
+Dhoni
+India
+Wicket-Keeper 
+
+Sample 1 Output:
+Player Details
+Player Name: Dhoni
+Country Name: India
+Skill : Wicket-Keeper 
+
+Sample 2 Input:
+Virat Kholi
+India
+Batsman 
+
+Sample 2 Output:
+Player Details
+Player Name: Virat Kholi
+Country Name: India
+Skill : Batsman
+
+Write a Java Program to Create a Class named Player with the following member variables/attributes. Create another Class called Main and write a main method to get the player details in a string separated by a comma. Use String. Split() function to display the details.
+
+Sample 1 Input:
+MS Dhoni,India,Wicket Keeper 
+
+Sample 1 Output:
+Player Details
+Player Name: MS Dhoni
+Country Name: India
+Skill: Wicket Keeper 
+
+Sample 2 Input:
+Virat Kholi,India,Batsman 
+
+Sample 2 Output:
+Player Details
+Player Name: Virat Kholi
+Country Name: India
+Skill: Batsman
+
+Write a Java program to Create a class named Innings with the following public member variables / Attributes. Include a method in the class named displaylnningsDetails.In This method, display The details of The innings in The format shown in The sample output. This method does not accept any arguments and its return type is void.
+
+Create another class named Main and write a main method to test the above class.
+
+Input Format
+The First line Consists of a String
+The Second line consists of a String that represents battingTeam
+The next Line consists of a Long that represents how many runs scored 
+
+Output Format
+The Output Should display the InningsDetails 
+
+Sample 1 Input:
+First Innings
+CSK
+190
+
+Sample 1 Output:
+Innings Details
+Innings number: First Innings
+Batting Team : CSK
+Runs scored :190 
+
+Sample 2 Input:
+Second Innings
+RCB
+195 
+
+Sample 2 Output:
+Innings Details
+Innings number: Second Innings
+Batting Team : RCB
+Runs scored :195
+
+Create a class named Innings with The following private member variables/attributes
+
+Include a 2-argument Argument Constructor in This Class. The arguments passed To The constructor are in This order --- battingTeam, runs. Include a default, empty constructor. Include appropriate getters and setters.
+
+[Naming Convention:
+getters : getBattingTeam getRuns
+setters : setBattingTeam, setRuns...]
+
+Create another class named Main and include a main method To test The above class(print The Output in Main Class).
+
+Use an array of objects To read innings details. It includes the first innings and second innings 
+
+Input Format
+The Input Consists of String and Long 
+
+Output Format
+The Output should display the Innings Details 
+
+Sample 1 Input:
+RCB
+190
+CSK
+188 
+
+Sample 1 Output:
+Innings 1 Details
+BattingTeam : RCB
+Runs scored : 190
+Innings 2 Details
+BattingTeam : CSK
+Runs scored : 188 
+
+Sample 2 Input:
+CSK
+230
+RR
+145 
+
+Sample 2 Output:
+Innings 1 Details
+BattingTeam : CSK
+Runs scored : 230
+Innings 2 Details
+BattingTeam : RR
+Runs scored : 145
+
